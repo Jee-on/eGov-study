@@ -19,6 +19,7 @@ public class XmlEmpDAO {
 		   empVO.setEmpName("EmpName" + i);
 		   empVO.setJob("SALESMAN");
 		   list.add(empVO);
+		   
 	   }
    }
    
@@ -26,5 +27,31 @@ public class XmlEmpDAO {
 	   list.add(empVO);
 	   Collections.sort(list);
    }
+
+   public void updateEmp(EmpVO empVO) throws Exception{
+	int index= Collections.binarySearch(list, empVO);
+	
+	EmpVO orgEmpVO = list.get(index);
+	orgEmpVO.setEmpName(empVO.getEmpName());
+	orgEmpVO.setJob(empVO.getJob());
+   }
+
+   public void deleteEmp(EmpVO empVO) throws Exception{
+	list.remove(Collections.binarySearch(list, empVO));
+	Collections.sort(list);
+   }
+
+   public EmpVO selectEmp(EmpVO empVO ) throws Exception{
+   int index = Collections.binarySearch(list, empVO);
+
+   // list search 결과 해당값을 찾을 수 없으면 음수값
+   // (insertion point) -1 반환
+   return index < 0 ? null : list.get(index);
+   }
+
+   public List<EmpVO> selectEmpList() throws Exception{
+	return list;
+   }
+
 
 }
