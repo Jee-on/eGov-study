@@ -1,13 +1,8 @@
 package egovframework.lab.ajax.web;
 
-import java.net.URLDecoder;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
+import egovframework.lab.ajax.service.DepartmentService;
+import egovframework.lab.ajax.service.EmployeeService;
+import egovframework.lab.com.vo.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -15,9 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import egovframework.lab.ajax.service.DepartmentService;
-import egovframework.lab.ajax.service.EmployeeService;
-import egovframework.lab.com.vo.Department;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.net.URLDecoder;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -40,7 +38,7 @@ public class AjaxController {
     	String searchName = URLDecoder.decode(keyword,"utf-8");
     	
     	// TODO [Step 2-2-2] autoComplete의 리스트를 DB를 통하여 가져온다.
-		
+		List<String> nameList = employeeService.getNameListForSuggest(searchName);
 		
 		//modelAndView.addObject("resultList", nameList);
 

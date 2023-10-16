@@ -39,7 +39,7 @@ public class AjaxSimpleController {
 	public ModelAndView simpleAjax(@RequestParam("keyword") String keyword) throws Exception{
 
     	ModelAndView modelAndView = new ModelAndView();
-    	
+    	modelAndView.setViewName("jsonView");
     	
     	String decode_keyword = URLDecoder.decode(keyword,"utf-8");
 

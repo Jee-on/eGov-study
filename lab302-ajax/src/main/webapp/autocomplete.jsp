@@ -20,7 +20,23 @@
 	$(document).ready(function(){
 		// TODO [Step 2-1-3] 검색어에 대한 jquery ajax 자동완성 구현하기
 		// ------------------------------------------------------
-	    
+		$("#keyword").autocomplete({
+			source: function(request, response){
+				$.ajax({
+					url: "<c:url value='/autoCompleteSimple.do'/>",
+					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+					data: { keyword: encodeURIComponent(request.term) }, //after the input event
+					dataType: "json",
+					success: function(returnData, status){
+						response(returnData.resultList);
+					}
+				});
+			},
+			minLength: 1,
+			select: function(event, ui){
+				$("#keyword").val(this.value);
+			}
+		});
 	 
 	});
 		

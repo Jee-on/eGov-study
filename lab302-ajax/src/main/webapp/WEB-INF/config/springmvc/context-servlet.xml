@@ -44,6 +44,9 @@
 		  p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
 		  
 	<!-- TODO [Step 2-1-2] MappingJackson2JsonView 빈 등록(jsonView 선언) -->
+	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+		<property name="contentType" value="text/html;charset=UTF-8"/>
+	</bean>
 
 
 </beans>

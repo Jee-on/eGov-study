@@ -40,7 +40,17 @@ $(document).ready(function(){
     });
 	
    // TODO [Step 2-2-1] 부서번호에 대한 jquery autoSelected 기능 구현하기(jquery autoselected)
- 
+    $('#superdeptid').change(function(){
+        $.ajax({
+            url: "<c:url value='/autoSelectDept.do'/>",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            data: {depth:2, superdeptid:encodeURIComponent($('#superdeptid option:selected').val())},
+            dataType: "json",
+            success: function(returnData, status){
+                $('#departmentid').loadSelectDept(returnData,"근무부서를 선택하세요.");
+            }
+        });
+    });
  
 });
 	
