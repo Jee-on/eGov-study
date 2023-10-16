@@ -18,7 +18,23 @@
 	$(function() {
 	
 		// TODO [Step 4-2-03] ajax사용을 위한 jquery autocomplete 코드를 생성한다.
-
+		$("#searchEid").autocomplete({
+			source: function(request, response){
+				$.ajax({
+					url:"<c:url value='/autoCompleteEid.do'/>",
+					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+					data: { keyword: encodeURIComponent(request.term) },
+					dataType: "json",
+					success: function(returnData, status){
+						response(returnData.resultList);
+					}
+				})
+			},
+			minLengh:1,
+			select: function(event, ui){
+				$("#searchEid").val(this.value);
+			}
+		})
 	});
 
 

@@ -35,9 +35,11 @@ public class EmployeeController {
 
 	// TODO [Step 4-2-01] employeeList.do 경로로 요청과 메소드(getEmpList)를 매핑해준다.
 	// @RequestMapping 를 이용한다.
+
 	// TODO [Step 4-2-02] 화면에서 넘어오는 pageNo 파라미터 값을 반드시 넘어오지 않아도 됨을 명시적표현해 본다.
 	// @RequestParam 의 required 를 이용한다. example) @RequestParam(value = "var",
 	// required = true)
+	@RequestMapping(value="employeeList.do", method=RequestMethod.GET, @RequestParam(value="pageNo", required=false))
 	public String getEmpList(String pageNo, SearchCriteria searchCriteria, ModelMap model,
 			@RequestParam Map<String, Object> commandMap) throws Exception {
 
