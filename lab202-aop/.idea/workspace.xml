@@ -38,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/gitrepo/egov-stdy/lab202-aop",
+    "last_opened_file_path": "C:/gitrepo/egov-stdy/lab204-ibatis",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,11 +46,11 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15625",
     "project.structure.side.proportion": "0.27114716",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.All in lab202-aop (1)">
+  <component name="RunManager" selected="JUnit.EmpServiceTest">
     <configuration name="All in lab201-aop (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab201-aop" />
       <option name="PACKAGE_NAME" value="" />
@@ -100,8 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in lab202-aop (1)" />
         <item itemvalue="JUnit.EmpServiceTest" />
+        <item itemvalue="JUnit.All in lab202-aop (1)" />
         <item itemvalue="JUnit.All in lab202-aop" />
         <item itemvalue="JUnit.All in lab201-aop (1)" />
         <item itemvalue="JUnit.All in lab201-aop" />
@@ -140,6 +140,7 @@
       <updated>1697181305519</updated>
       <workItem from="1697181306457" duration="3125000" />
       <workItem from="1697184626387" duration="2863000" />
+      <workItem from="1697414631298" duration="776000" />
     </task>
     <servers />
   </component>
