@@ -16,26 +16,8 @@
 <script src="<c:url value='/js/jqueryui.js'/>"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-	
-		// TODO [Step 4-2-03] ajax사용을 위한 jquery autocomplete 코드를 생성한다.
-		$("#searchName").autocomplete({
-			source: function(request, response){
-				$.ajax({
-					url:"<c:url value='/suggestName.do'/>",
-					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-					data: { searchName: encodeURIComponent(request.term) },
-					dataType: "json",
-					success: function(returnData, status){
-						response(returnData.resultList);
-					}
-				})
-			},
-			minLength:1,
-			select: function(event, ui){
-				$("#searchName").val(this.value);
-			}
-		})
-	});
+		$("#")
+	})
 
 
 	function fnSearch(){
@@ -64,8 +46,8 @@
 		<td colspan="6" >
 			사원번호 :<form:input path="searchEid"/> 
 			부서번호 : <form:input path="searchDid"/>
-			이름 :   <form:input path="searchName" cssStyle="WIDTH: 80px;"/>&nbsp;
-			<input type="submit" value="검색" onclick="this.disabled=true,this.form.submit();" />
+			이름 :   <form:input path="searchName" cssStyle="WIDTH: 80px;"/>
+	<input type="submit" value="검색" onclick="this.disabled=true,this.form.submit();" />
 		</td>
 	</tr>	
 

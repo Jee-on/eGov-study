@@ -37,9 +37,11 @@ public class EmpMapper extends EgovAbstractMapper{
         try {
             // TODO [Step 4-5-02] insertEmployee 메소드는 EgovAbstractMapper에서 제공되는  insert()를 이용하여 
             // com.easycompany.mapper.EmpMapper.insertEmployee ID 를 가진 sql문을 실행한다.
-        	
+			insert("com.easycompany.mapper.EmpMapper.insertEmployee", emp);
+			result =1;
 
-        } catch (Exception e) {
+
+		} catch (Exception e) {
         	LOGGER.debug("EmployeeManageDaoImpl DAO Exception: {}", e);
             e.printStackTrace();
         }
