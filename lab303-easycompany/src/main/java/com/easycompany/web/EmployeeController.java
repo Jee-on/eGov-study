@@ -39,9 +39,9 @@ public class EmployeeController {
 	// TODO [Step 4-2-02] 화면에서 넘어오는 pageNo 파라미터 값을 반드시 넘어오지 않아도 됨을 명시적표현해 본다.
 	// @RequestParam 의 required 를 이용한다. example) @RequestParam(value = "var",
 	// required = true)
-	@RequestMapping(value="employeeList.do", method=RequestMethod.GET, @RequestParam(value="pageNo", required=false))
-	public String getEmpList(String pageNo, SearchCriteria searchCriteria, ModelMap model,
-			@RequestParam Map<String, Object> commandMap) throws Exception {
+	@RequestMapping(value="employeeList.do", method=RequestMethod.GET)
+	public String getEmpList(SearchCriteria searchCriteria, ModelMap model,
+			@RequestParam Map<String, Object> commandMap, @RequestParam(value="pageNo", required=false) String pageNo) throws Exception {
 
 		int currentPageNo;
 		try {
@@ -111,7 +111,7 @@ public class EmployeeController {
 	 * getEmployeeInfo이다.
 	 */
 	public String defaultUpdateEmployee(@RequestParam("employeeid") String employeeid, ModelMap model) {
-		model.addAttribute("employee", getEmployeeInfo(employeeid));
+		model.addAttribute("employee", getEmployeeInfo());
 		return "modifyemployee";
 	}
 

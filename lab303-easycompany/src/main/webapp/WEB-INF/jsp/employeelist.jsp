@@ -15,24 +15,24 @@
 <script src="<c:url value='/js/jquery.js'/>"></script>
 <script src="<c:url value='/js/jqueryui.js'/>"></script>
 <script type="text/javascript">
-	$(function() {
+	$(document).ready(function(){
 	
 		// TODO [Step 4-2-03] ajax사용을 위한 jquery autocomplete 코드를 생성한다.
-		$("#searchEid").autocomplete({
+		$("#searchName").autocomplete({
 			source: function(request, response){
 				$.ajax({
-					url:"<c:url value='/autoCompleteEid.do'/>",
+					url:"<c:url value='/suggestName.do'/>",
 					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-					data: { keyword: encodeURIComponent(request.term) },
+					data: { searchName: encodeURIComponent(request.term) },
 					dataType: "json",
 					success: function(returnData, status){
 						response(returnData.resultList);
 					}
 				})
 			},
-			minLengh:1,
+			minLength:1,
 			select: function(event, ui){
-				$("#searchEid").val(this.value);
+				$("#searchName").val(this.value);
 			}
 		})
 	});
