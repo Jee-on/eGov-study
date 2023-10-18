@@ -43,15 +43,15 @@ public class EmployeeController {
         return new SearchCriteria();
     }
 
-    @RequestMapping(value="employeeList.do", method = RequestMethod.POST)
-    public String getSearchEmpList(@ModelAttribute SearchCriteria searchCriteria){
-//TO-DO
+//    @RequestMapping(value="employeeList.do", method = RequestMethod.POST)
+//    public String getSearchEmpList(@ModelAttribute SearchCriteria searchCriteria){
+//    //TO-DO
+//
+//        return "employeelist";
+//    }
 
-        return "employeeList";
-    }
 
-
-    @RequestMapping(value = "employeeList.do", method = RequestMethod.GET)
+    @RequestMapping(value = "employeeList.do")
     public String getEmpList(@ModelAttribute SearchCriteria searchCriteria, ModelMap model,
                              @RequestParam Map<String, Object> commandMap, @RequestParam(value = "pageNo", required = false) String pageNo) throws Exception {
 
